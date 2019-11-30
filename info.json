@@ -1,0 +1,11 @@
+{
+  "name": "Pheromones",
+  "version": "0.0.1",
+  "title": "Pheromones",
+  "author": "Reika",
+  "contact": "",
+  "homepage": "",
+  "factorio_version" : "0.17",
+  "description": "Adds the ability to use chemical production to produce chemicals that mimic biter pheromones, allowing you to regionally alter their behavior.",
+  "dependencies": ["base", "DragonIndustries", "? alien-biomes", "? NaturalEvolution", "? Rampant"]
+}
