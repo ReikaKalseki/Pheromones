@@ -149,6 +149,24 @@ local function addEffect(variant, callFunc, tickRate, color)
 			localised_name = fluid.localised_name
 		}
 		
+		local input = {}
+		local fluids = 0
+		local add = ingredients[variant]
+		if add then
+			for _,item in pairs(add) do
+				table.insert(input, item)
+				if item.type == "fluid" then
+					fluids = fluids+1
+				end
+			end
+		end
+		
+		if fluids < 2 then
+			table.insert(input, {type = "fluid", name = data.raw.fluid["pure-water"] and "pure-water" or "water", amount = 80})
+		else
+			table.insert(input, {type = "item", name = data.raw.fluid["pure-water"] and "pure-water-barrel" or "water-barrel", amount = 2})
+		end
+		
 		local recipe = {
 			type = "recipe",
 			name = "pheromone-" .. variant,
@@ -156,9 +174,7 @@ local function addEffect(variant, callFunc, tickRate, color)
 			icon_size = 32,
 			category = "chemistry",
 			energy_required = crafttime,
-			ingredients = {
-				{type = "fluid", name = data.raw.fluid["pure-water"] and "pure-water" or "water", amount = 80}
-			},
+			ingredients = input,
 			results = {
 				{type = "fluid", name = fluid.name, amount = 40}
 			},
@@ -171,13 +187,6 @@ local function addEffect(variant, callFunc, tickRate, color)
 			},
 			localised_name = fluid.localised_name
 		}
-		
-		local add = ingredients[variant]
-		if add then
-			for _,item in pairs(add) do
-				table.insert(recipe.ingredients, item)
-			end
-		end
 		
 		local dump = {
 			type = "recipe",
