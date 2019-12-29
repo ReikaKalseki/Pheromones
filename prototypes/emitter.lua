@@ -77,7 +77,7 @@ data:extend({
           width = 129,
           height = 112,
           frame_count = 1,
-          shift = {0.421875, 0},
+          shift = {0.421875, -0.25},
           hr_version =
           {
             filename = "__Pheromones__/graphics/entity/emitter/hr-emitter.png",
@@ -85,7 +85,7 @@ data:extend({
             width = 239,
             height = 256,
             frame_count = 1,
-            shift = util.by_pixel(0.75, 5.75),
+            shift = util.by_pixel(0.75, 5.75-14),
             scale = 0.5
           }
         },
@@ -122,7 +122,7 @@ data:extend({
           height = 13,
           frame_count = 4,
           animation_speed = 0.5,
-          shift = {-0.671875, -0.640625},
+          shift = {-0.671875, -1.140625},
           hr_version =
           {
             filename = "__Pheromones__/graphics/entity/emitter/hr-emitter-propeller-1.png",
@@ -131,7 +131,7 @@ data:extend({
             height = 25,
             frame_count = 4,
             animation_speed = 0.5,
-            shift = util.by_pixel(-20.5, -18.5),
+            shift = util.by_pixel(-20.5, -23.5),
             scale = 0.5
           }
         }
@@ -145,7 +145,7 @@ data:extend({
           height = 9,
           frame_count = 4,
           animation_speed = 0.5,
-          shift = {0.0625, -1.234375},
+          shift = {0.0625, -2.234375},
           hr_version =
           {
             filename = "__Pheromones__/graphics/entity/emitter/hr-emitter-propeller-2.png",
@@ -154,7 +154,7 @@ data:extend({
             height = 15,
             frame_count = 4,
             animation_speed = 0.5,
-            shift = util.by_pixel(3.5, -38),
+            shift = util.by_pixel(3.5, -43),
             scale = 0.5
           }
         }
@@ -172,7 +172,7 @@ data:extend({
           width = 46,
           height = 94,
           animation_speed = 0.5,
-          shift = util.by_pixel(-2, -40),
+          shift = util.by_pixel(15, -99),
           hr_version =
           {
             filename = "__Pheromones__/graphics/entity/emitter/smoke-hr.png",
@@ -181,7 +181,7 @@ data:extend({
             width = 90,
             height = 188,
             animation_speed = 0.5,
-            shift = util.by_pixel(-2, -40),
+            shift = util.by_pixel(15, -99),
             scale = 0.5
           }
         }
