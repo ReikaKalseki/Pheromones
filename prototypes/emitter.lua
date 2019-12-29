@@ -75,7 +75,7 @@ data:extend({
           filename = "__Pheromones__/graphics/entity/emitter/emitter-base.png",
           priority = "high",
           width = 129,
-          height = 100,
+          height = 112,
           frame_count = 1,
           shift = {0.421875, 0},
           hr_version =
@@ -83,7 +83,7 @@ data:extend({
             filename = "__Pheromones__/graphics/entity/emitter/hr-emitter.png",
             priority = "high",
             width = 239,
-            height = 219,
+            height = 256,
             frame_count = 1,
             shift = util.by_pixel(0.75, 5.75),
             scale = 0.5
@@ -158,7 +158,34 @@ data:extend({
             scale = 0.5
           }
         }
-      }
+      },
+      {
+        apply_recipe_tint = "primary",
+        fadeout = true,
+        constant_speed = true,
+        render_layer = "wires",
+        animation =
+        {
+          filename = "__Pheromones__/graphics/entity/emitter/smoke.png",
+          frame_count = 47,
+          line_length = 16,
+          width = 46,
+          height = 94,
+          animation_speed = 0.5,
+          shift = util.by_pixel(-2, -40),
+          hr_version =
+          {
+            filename = "__Pheromones__/graphics/entity/emitter/smoke-hr.png",
+            frame_count = 47,
+            line_length = 16,
+            width = 90,
+            height = 188,
+            animation_speed = 0.5,
+            shift = util.by_pixel(-2, -40),
+            scale = 0.5
+          }
+        }
+      },
     },
   },
   {

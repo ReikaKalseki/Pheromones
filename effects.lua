@@ -201,6 +201,13 @@ local function addEffect(variant, callFunc, tickRate, color)
 			results = {
 				{type = "fluid", name = gas.name, amount = 10}
 			},
+			crafting_machine_tint =
+			{
+			  primary = color,
+			  secondary = color,
+			  tertiary = color,
+			  quaternary = color,
+			},
 			localised_name = fluid.localised_name
 		}
 		
