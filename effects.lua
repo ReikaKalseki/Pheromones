@@ -118,6 +118,7 @@ local function addEffect(variant, callFunc, tickRate, color)
 		local gas = table.deepcopy(fluid);
 		gas.name = gas.name .. "-gas"
 		gas.icons[1].icon = "__Pheromones__/graphics/icons/fluid/base-gas.png"
+		gas.hidden = true
 		
 		local cloudtime = 60*math.min(15, crafttime*2.5)
 		
