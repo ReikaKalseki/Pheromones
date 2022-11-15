@@ -1,18 +1,10 @@
 require "__DragonIndustries__.color"
 require "__DragonIndustries__.recipe"
 
-local callbacks = {}
-
-function getAllEffects()
-	local ret = {}
-	for k,v in pairs(callbacks) do
-		table.insert(ret, k)
-	end
-	return ret
-end
+effects = {}
 
 local function runCallback(entry, phero)
-	local func = callbacks[phero]
+	local func = effects[phero].call
 	if func then
 		--game.print("Running callback for phero " .. phero)
 		return func(entry.vent)
@@ -22,12 +14,8 @@ local function runCallback(entry, phero)
 	end
 end
 
-local function registerCall(id, callback)
-	callbacks[id] = callback
-end
-
-function typeExists(id)
-	return callbacks[id] ~= nil
+function getEffect(id)
+	return effects[id]
 end
 
 local function getEffectID(gas)
@@ -88,9 +76,7 @@ if data and data.raw and not game then
 	end
 end
 
-local function addEffect(variant, callFunc, tickRate, color)
-	registerCall(variant, callFunc)
-	
+local function addEffect(variant, callFunc, tickRate, color)	
 	color = convertColor(color, true)
 	
 	if data and data.raw and not game then
@@ -216,8 +202,10 @@ local function addEffect(variant, callFunc, tickRate, color)
 		
 		table.insert(data.raw.technology["biter-pheromones"].effects, {type = "unlock-recipe", recipe = recipe.name})
 		table.insert(data.raw.technology["biter-pheromones"].effects, {type = "unlock-recipe", recipe = dump.name})
+
+		effects[variant] = {name = variant, fluid = fluid.name, entity = cloud.name, recipe = recipe.name, color = color, call = callFunc}
 		
-		return entity
+		return cloud
 	end
 end
 

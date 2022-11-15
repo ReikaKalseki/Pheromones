@@ -10,4 +10,4 @@ end
 
 --remote.call("human interactor", "bye", "dear reader")
 
-addTracker("pheromone-emitter",					addPheromoneEmitter,		removePheromoneEmitter,			nil,						"phero",	getGlobal())
+addTracker("pheromone-emitter",					addPheromoneEmitter,		removePheromoneEmitter,			nil)
